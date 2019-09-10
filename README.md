@@ -1,4 +1,5 @@
 # Resturaunt-App
 
 Contributors:
-Jesse Sainz
+Jesse Sainz, Sangita moktan
+
