@@ -1,7 +1,7 @@
 # Resturaunt-App
 
 Contributors:
-Jesse Sainz, Sangita Moktan, Roshan Mainali
+Jesse Sainz, Sangita Moktan, Roshan Mainali, Wassim Lagnaoui
 
 
 Problem Statement:
@@ -26,5 +26,6 @@ List of users:
 	
 •Others: 
 Other people who do not want to order the food but still check on the app for their future reference.
+
 
 
