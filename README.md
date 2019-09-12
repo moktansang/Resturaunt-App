@@ -36,5 +36,34 @@ List of users:
 •Others: 
 Other people who do not want to order the food but still check on the app for their future reference.
 
+Functionality Requirements:
+For Customers:
+        i.The system will allow customers to place an order.
+        ii.The system will allow customers  to add some comments according to their preferences.
+        iii. Addition and subraction of the menu items while placing order.
+        iv.The payment options like card or cash for the customers.
+        v.Allow to print the receipt of the order.
+        vi.Create an account for future accessibility.
+
+For Waiting Staff:
+        i. Notify if the food is ready for the customer.
+        ii.  Process the payment for customers.
+        iii.to clear the prompts once the order has been dealt with.
+
+For kitchen staff:
+        i. allow kitchen staff to see all orders needed to be made with menu items and read the comments.
+        ii.Mark whether the order has been completed or needs to be waited.
+        iii.Allow to prompt wait staff if there is any clarification needed.
+
+For management:
+        i.See the overall sales of the day.
+        ii. Replying the queries of customer regarding the service for the saske of customer service.
+        iii. edit the menu items and their respective prices.
+
+non-functional Requirement:
+        i. keep track of time and date.
+        ii.Store menu information in single file.
+        iii.Adding more graphical user interface.
+
 
 
