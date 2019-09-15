@@ -1,0 +1,16 @@
+# Created by https://www.gitignore.io/api/visualstudiocode
+# Edit at https://www.gitignore.io/?templates=visualstudiocode
+
+# Ignore VS Code Settings
+.settings
+.project
+.classpath
+API/bin/
+API/.settings
+
+# Ignore gradle
+API/.gradle
+API/build
+API/gradle
+API/gradlew
+API/gradlew.bat
