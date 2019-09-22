@@ -4,6 +4,7 @@
 # Ignore VS Code Settings
 .settings
 .project
+.vscode
 .classpath
 API/bin/
 API/.settings
