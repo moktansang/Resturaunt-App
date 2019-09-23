@@ -18,11 +18,11 @@ export default class BackgroundImageGallery extends React.Component {
         this.deviceWidth = Dimensions.get('window').width;
         this.deviceHeight = Dimensions.get('window').height;
 
-        // create a state object for each image passed in
+        // create an animationState object for each image passed in
         // in the form state.image1: {...}
-        this.state = {};
+        this.animationState = {};
         props.images.forEach((image, index) => {
-            this.state[`image${index}`] = {
+            this.animationState[`image${index}`] = {
                 
                 // Animated.Value is a way to make a value animatable by react-native
                 fadeAnimation: new Animated.Value(0),
@@ -33,12 +33,6 @@ export default class BackgroundImageGallery extends React.Component {
     }
 
     createImageAnimation({fadeAnimation, widthAnimation, heightAnimation}, delay=0) {
-        
-        // reset animation values for state object passed in
-        fadeAnimation.setValue(0);
-        widthAnimation.setValue(this.deviceWidth);
-        heightAnimation.setValue(this.deviceHeight);
-
         /**
          * configure animation for state object
          * 
@@ -84,18 +78,19 @@ export default class BackgroundImageGallery extends React.Component {
         // create an animation for each image from props, and add delay so animations only overlap slightly
         animationsArr = this.props.images.map((image, index) => {
             const delay = 5000 * (index+1);
-            return this.createImageAnimation(this.state[`image${index}`], delay);
+            return this.createImageAnimation(this.animationState[`image${index}`], delay);
         })
 
         // run all animations in parrallel, in a loop
         Animated.loop(
-            Animated.parallel(animationsArr)
+            Animated.parallel([...animationsArr])
         ).start()
     }
 
     render() {
         return (
-            <View>
+            <View style={styles.background}>
+                <View style={styles.imageOverlay} />
                 {/* return array of Animated Image components for each image in props.images */}
                 {this.props.images.map((image, index) => {
                     return (
@@ -103,9 +98,9 @@ export default class BackgroundImageGallery extends React.Component {
                             style={{
                                 // set style attributes to corresponding animated values
                                 // i.e. opacity will change according to the value of fadeAnimation
-                                opacity: this.state[`image${index}`].fadeAnimation,
-                                height: this.state[`image${index}`].heightAnimation,
-                                width: this.state[`image${index}`].widthAnimation,
+                                opacity: this.animationState[`image${index}`].fadeAnimation,
+                                height: this.animationState[`image${index}`].heightAnimation,
+                                width: this.animationState[`image${index}`].widthAnimation,
                                 ...styles.backgroundImage
                             }}
                             source={image}
@@ -114,9 +109,10 @@ export default class BackgroundImageGallery extends React.Component {
                         />
                     )
                 })}
-                {/* <View style={styles.logo}>
-                    <Text styles={styles.logo.text}>Gino's Italian</Text>
-                </View> */}
+                <View style={styles.logoContainer}>
+                    <Text style={styles.logoText}>Gino's Italian</Text>
+                    <Text style={styles.startButton}>Touch to Start</Text>
+                </View>
             </View>
         )
     }
