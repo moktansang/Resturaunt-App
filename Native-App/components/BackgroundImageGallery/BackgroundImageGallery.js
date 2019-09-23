@@ -1,5 +1,9 @@
+// VENDOR
 import React from 'react'
 import { Animated, Easing, Dimensions, View, StyleSheet, Text } from 'react-native'
+
+// APP
+import styles from './BackgroundImageGallery.scss'
 
 /**
  * @name BackgroundImageGallery
@@ -117,23 +121,4 @@ export default class BackgroundImageGallery extends React.Component {
         )
     }
 }
-
-const styles = StyleSheet.create({
-    backgroundImage: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        zIndex: 1,
-    },
-
-    // logo: {
-    //     height: '100%',
-    //     width: '100%',
-    //     backgroundColor: 'gray',
-    //     display: 'flex',
-    //     justifyContent: 'center',
-    //     alignItems: 'center',
-    //     zIndex: 0,
-    // }
-})
 
