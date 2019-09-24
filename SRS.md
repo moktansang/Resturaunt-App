@@ -1,3 +1,5 @@
+# Software Requirements Specification (SRS)
+
 ### 1.1) Purpose
 The main purpose of this application is to decrease the time between when 
 the customer comes into the restaurant and when they leave the restaurant.
