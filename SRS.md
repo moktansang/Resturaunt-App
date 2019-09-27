@@ -50,7 +50,7 @@ Staff can be trained to use the system. However, if customers aren’t comfortab
 ---
 
 ### 3. Requirements
-##### 3.1.1 User Interface
+##### 3.1.1 User Interface (MK: Too high level. Talk about different screens and respective functionalities)
 The user interface will feature a styling GUI for users to interact with their orders and the restaurant's menu. 
 The UI will have buttons to select items to add to their order, as well as a section to keep track of items currently on their order. 
 They will also be able to remove items from their order on this screen. Once they have added everything to the order, 
@@ -92,11 +92,13 @@ The system will give the wait staff an overview of tables they are in charge in 
 **3.2.3 - Kitchen Staff**
 - The system will allow the kitchen to see all the orders they need to cook, with menu items, and any modifications and/or comments listed.
 - As soon as the customer puts in an order, the server and kitchen staff will see that order come through. This way the kitchen can immediately start working on it.
-- The system will allow the kitchen to mark orders as complete, and prompt wait staff to pick up food.
+- The system will allow the kitchen to mark orders as complete, and prompt wait staff to pick up food. (MK: Divide all combined requirements such as these into individual ones *)
 - The system will allow the kitchen to prompt wait staff if there is any clarification needed.
 
 After the meal is delivered, and the customer is ready to pay, they can choose to pay using our system, or have the server take care of it.
+(*MK: Please add admin's related functional requirements *)
 
+(* MK: Add non-functional requirements: performance, security, and availability *)
 ### 4. Glossary
 - Customer- One of the users of the system, will order, and pay
 - Kitchen- One of the users of the system, they use the software to get instructions on what to prepare and notify a wait staff.
