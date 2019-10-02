@@ -20,16 +20,13 @@ The best way to decrease expenses and increase profit in the restaurant business
 The proposed system will increase order accuracy and decrease the time between the customer sitting down and receiving their food. It will also decrease the time the customer has to wait to pay for their order. This should increase the overall satisfaction of the customer, promoting return business.
 
 ##### 1.2 - Scope
-To start, we are going to focus only on the customers, the servers, and the kitchen. By providing a middle-system, we will be able to speed up the 
+To start, we are going to focus only on the customers, the servers, and the kitchen. By acting as an intermediate part, we will be able to speed up the 
 process of ordering food, getting the order to the kitchen, and getting completed orders to tables. Not only will this system benefit the customer, 
-but servers will now be able to manage their tables and orders more efficiently.
+but servers will now be able to manage their tables and orders more efficiently. The app will be used for several business promotion and customer can quickly give their recommendations to their dear ones.
 
 ##### 1.3 - References
-The document builds on the following references
-- The course textbook: "Software Engineering - A Practitioner's Approach - Seventh Edition"
-- Sample SRS documents available for download through the UNT Course Blackboard.
-- Currently, this SRS does not reference any outside resources.  
-
+Currently our SRS do not require any reference since we will be surfing the internet and the course slide for format. The document is built on the following references:
+- IEEE Std R. S. Pressman, Software engineering: a practitioners approach, 8th ed. New York, NY: McGraw-Hill Education, 2014.
 ---
 
 ### 2. Overall Description
