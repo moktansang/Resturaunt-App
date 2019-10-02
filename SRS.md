@@ -101,4 +101,6 @@ After the meal is delivered, and the customer is ready to pay, they can choose t
 - Customer- One of the users of the system, will order, and pay
 - Kitchen- One of the users of the system, they use the software to get instructions on what to prepare and notify a wait staff.
 - Menu items- Consists of the name, price, ingredients, and calories
-- Wait Staff- One of the users of the system. They set the software by tracking tables and responding to the prompts the system gives them
+- Wait Staff- Which is the one of the user systems which notifies the waiter about the customer orders as well as the prepared order form the kitchen. This also help to track the number of tables occupied by the guest as well as the vacant table. 
+ 
+
