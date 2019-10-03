@@ -8,7 +8,7 @@ For Restaurant-App
 
 prepared by Roshan Mainali, Sangita Moktan, Wassim Lagnaoui, Jesse Sainz
 
-SOFTWARE REQUIREMENTS SPECIFICATION
+# SOFTWARE REQUIREMENTS SPECIFICATION
 
 ### 1. Introduction
 ##### 1.1 - Purpose
