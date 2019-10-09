@@ -1,11 +1,15 @@
+// VENDOR
 import React from 'react';
+import { Text, View} from 'react-native';
 
-import BackgroundImageGallery from './components/BackgroundImageGallery/BackgroundImageGallery';
-import backgroundImages from './utils/backgroundImages';
+// APP
+import AppNavigator from './components/AppNavigator/AppNavigator'
 
 /** This is the main component of the App */
 export default function App() {
   return (
-    <BackgroundImageGallery images={backgroundImages} />
+    <View style={{ height: '100%', width: '100%' }}>
+      <AppNavigator />
+    </View>
   );
 }
