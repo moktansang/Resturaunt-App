@@ -8,7 +8,10 @@ import styles from './BackgroundImageGallery.scss'
 /**
  * @name BackgroundImageGallery
  * @description Create an image gallery that rotates images in a loop
+ * @prop {string} overlayColor - color of the overlay that goes on top of the images
  * @prop {array of pngs} images
+ * @prop {function} goToNextPage - navigate function that will navigate to the specified next page
+ * @prop children 
  */
 export default class BackgroundImageGallery extends React.Component {
     constructor(props) {
@@ -75,8 +78,11 @@ export default class BackgroundImageGallery extends React.Component {
     // the component is rendered
     componentDidMount() {
 
+        // destructure props to map this.props.images to images
+        const { images } = this.props;
+
         // create an animation for each image from props, and add delay so animations only overlap slightly
-        animationsArr = this.props.images.map((image, index) => {
+        animationsArr = images.map((image, index) => {
             const delay = 5000 * (index+1);
             return this.createImageAnimation(this.animationState[`image${index}`], delay);
         })
@@ -88,11 +94,19 @@ export default class BackgroundImageGallery extends React.Component {
     }
 
     render() {
+        // destructure this.props
+        const { images, overlayColor, goToNextPage, children } = this.props;
+        
         return (
-            <View style={styles.background}>
-                <View style={styles.imageOverlay} />
+            <View style={styles.background} onTouchEnd={goToNextPage}>
+                <View style={{
+                    backgroundColor: overlayColor,
+                    ...styles.imageOverlay
+                    }}
+                />
+
                 {/* return array of Animated Image components for each image in props.images */}
-                {this.props.images.map((image, index) => {
+                {images.map((image, index) => {
                     return (
                         <Animated.Image
                             style={{
@@ -109,10 +123,8 @@ export default class BackgroundImageGallery extends React.Component {
                         />
                     )
                 })}
-                <View style={styles.logoContainer}>
-                    <Text style={styles.logoText}>Gino's Italian</Text>
-                    <Text style={styles.startButton}>Touch to Start</Text>
-                </View>
+                {/* props.children renders what were between the component tags in the calling component */}
+                {children} 
             </View>
         )
     }
