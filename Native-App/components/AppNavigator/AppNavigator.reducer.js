@@ -10,7 +10,7 @@ export function updateCurrentPage(currentPage) {
 }
 
 const initialState = {
-    currentNavComponent: 'ScreenSaver'
+    currentPage: null
 }
 
 /**
@@ -21,6 +21,8 @@ const initialState = {
 export default function AppNavigationReducer(state = initialState, action) {
     switch(action.type) {
         case "UPDATE_CURRENT_PAGE":
-            return { currentNavComponent: action.currentNavComponent }
+            return { currentPage: action.currentPage }
+        default:
+            return state;
     }
 }
