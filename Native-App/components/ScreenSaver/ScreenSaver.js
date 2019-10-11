@@ -1,15 +1,21 @@
 // VENDOR
 import React from 'react'
 import { View, Text } from 'react-native'
+import { connect } from 'react-redux'
 
 // APP
 import BackgroundImageGallery from '../BackgroundImageGallery/BackgroundImageGallery'
 import backgroundImages from '../../utils/backgroundImages';
 import styles from './ScreenSaver.scss'
+import { updateCurrentPage } from '../AppNavigator/AppNavigator.reducer'
 
-export default class ScreenSaver extends React.Component {
+class ScreenSaver extends React.Component {
     constructor(props) {
         super(props);
+    }
+
+    componentDidMount() {
+        this.props.updateCurrentPage("ScreenSaver");
     }
 
     goToHomePage() {
@@ -28,3 +34,11 @@ export default class ScreenSaver extends React.Component {
         )
     }
 }
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        updateCurrentPage: (currentPage) => dispatch(updateCurrentPage(currentPage))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(ScreenSaver);
