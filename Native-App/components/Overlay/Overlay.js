@@ -1,26 +1,36 @@
 // VENDOR
 import React from 'react'
-import { View } from 'react-native'
-import { BlurView } from 'expo-blur'
+import { View, Animated } from 'react-native'
 
 // APP
 import styles from './Overlay.scss'
 import Device from '../../utils/deviceDimensions'
+import AnimatedBlurView from '../AnimatedBlurView/AnimatedBlurView'
 
 /**
  * @name Overlay
  * @description overlay to appear when the review bar is open
  * @param {valid color} bgColor - color that the overlay should appear
- * @param {function} onTouch - what to do when overlay is clicked
+ * @param {function} closeOrderReviewer - function that starts the closing animations
+ * @param {Animated.Value} animated_opacity - animated value for opacity
  */
-const Overlay = ({ bgColor, onTouch }) => (
-    <View style={{ height: Device.height, width: Device.width, ...styles.overlayWrapper}} onTouchEnd={() => onTouch()}>
-        <BlurView 
-            style={{ height: '100%', width: '100%', backgroundColor: bgColor }} 
-            tint='dark'
-            intensity={100}
-        />
-    </View>
-)
+class Overlay extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+        
+    render() {
+        const { bgColor, startCloseAnimation, animated_opacity } = this.props;
+        console.log(startCloseAnimation)
+        return (
+            <View 
+                style={{ height: Device.height, width: Device.width, ...styles.overlayWrapper}} 
+                onTouchEnd={() => startCloseAnimation()}
+            >
+                <AnimatedBlurView bgColor={bgColor} animated_opacity={animated_opacity}/>
+            </View>
+        )
+    }
+}
 
-export default Overlay;
+export default Overlay
