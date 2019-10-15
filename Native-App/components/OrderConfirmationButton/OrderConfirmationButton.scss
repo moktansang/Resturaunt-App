@@ -1,0 +1,22 @@
+.button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 75;
+    width: 80%;
+    background-color: rgb(13, 187, 13);
+    border-radius: 10px;
+    margin-bottom: 50;
+}
+
+.buttonText {
+    font-family: 'Georgia';
+    color: white;
+    font-size: 1.8rem;
+}
+
+.checkMark {
+    width: 35;
+    height: 35;
+}
