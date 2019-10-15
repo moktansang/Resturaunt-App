@@ -1,10 +1,12 @@
 // VENDOR
 import React from 'react'
 import { Text, Animated, View, ScrollView, Dimensions, SafeAreaView } from 'react-native'
+import { connect } from 'react-redux'
 
 // APP
 import DeviceSafeMargins from '../../utils/DeviceSafeMargins'
 import Category from '../Category/Category'
+import { updateCurrentPage } from '../AppNavigator/AppNavigator.reducer'
 
 class Home extends React.Component {
     constructor(props) {
@@ -21,6 +23,10 @@ class Home extends React.Component {
         this.scrollTo_Y_Location = this.scrollTo_Y_Location.bind(this);
     }
 
+    componentDidMount() {
+        this.props.updateCurrentPage("Home");
+    }
+
     scrollToTop() {
         this.scrollViewReference ? 
             this.scrollViewReference.scrollTo({ x: 0, y: -this.device.width, animated: false }) :
@@ -32,8 +38,6 @@ class Home extends React.Component {
             this.scrollViewReference.scrollTo({ x: null, y: pageY, animated: true }) :
             null;
     }
-
-
 
     render() {
         return (
@@ -60,4 +64,10 @@ class Home extends React.Component {
     }
 }
 
-export default Home;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        updateCurrentPage: (currentPage) => dispatch(updateCurrentPage(currentPage))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Home);
