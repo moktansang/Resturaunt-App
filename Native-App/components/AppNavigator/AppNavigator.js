@@ -13,7 +13,15 @@ import Home from '../Home/Home';
 const navigator = createStackNavigator(
     {
         ScreenSaver: { screen: ScreenSaver },
-        Home: { screen: Home }
+        Home: {
+            screen: Home,
+            // disable swiping back to screensaver on Home page
+            navigationOptions: {
+                title: "Home",
+                headerLeft: null,
+                gesturesEnabled: false,
+            }
+        }
     }, 
     {
         headerMode: 'none'
