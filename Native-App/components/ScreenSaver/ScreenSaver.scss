@@ -1,21 +1,43 @@
+.wrapper {
+    background-color: rgb(33,33,33);
+}
+
 .logoContainer {
-    z-index: 3;
+    background-color: rgb(33,33,33);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.logoText {
-    text-align: center;
-    width: 100%;
+.textContainer {
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ginoLogoText {
+    color: greenyellow;
     font-size: 8rem;
-    font-family: 'SnellRoundhand-Black';
-    font-weight: bold;
-    color: black;
+    font-family: 'Times New Roman';
 }
 
-.startButton {
-    text-align: center;
-    width: 100%;
+.subLogoText {
+    color: red;
+    font-size: 2rem;
+    font-family: 'Times New Roman';
+}
+
+.startTextContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(33,33,33);
+}
+
+.startText {
+    color: rgba(255, 255, 255, 0.575);
     font-size: 3rem;
-    font-family: 'Georgia';
-    font-weight: bold;
-    color: black;
+    font-family: 'Times New Roman';
 }
