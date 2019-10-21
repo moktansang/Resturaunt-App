@@ -2,7 +2,6 @@
 import React from 'react'
 import { View, Text, Image, Animated, Easing } from 'react-native'
 import { connect } from 'react-redux'
-import * as Font from 'expo-font'
 
 // APP
 import BackgroundImageGallery from '../BackgroundImageGallery/BackgroundImageGallery'
@@ -16,21 +15,13 @@ class ScreenSaver extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            FontsLoaded: false,
-        }
         this.circle_rotation_animation = new Animated.Value(0);
         this.logo_circle_height = this.logo_circle_width = 750;
         this.logo_circle_top_position = ((Device.height - 150) / 2) - (this.logo_circle_height / 2);
         this.logo_circle_left_position = (Device.width / 2) - (this.logo_circle_width / 2);
     }
 
-    async componentDidMount() {
-        await Font.loadAsync({
-            'Montserrat-Bold': require('../../assets/fonts/Montserrat/Montserrat-Bold.ttf'),
-            'Montserrat-Light': require('../../assets/fonts/Montserrat/Montserrat-Light.ttf'),
-        })
-        this.setState({ FontsLoaded: true });
+    componentDidMount() {
         this.props.updateCurrentPage("ScreenSaver");
         this.startCircleAnimation();
     }
@@ -44,7 +35,7 @@ class ScreenSaver extends React.Component {
         Animated.loop(
             Animated.timing(this.circle_rotation_animation, {
                 toValue: 1,
-                duration: 80000,
+                duration: 40000,
                 easing: Easing.linear,
                 useNativeDriver: true,
             })
@@ -58,8 +49,7 @@ class ScreenSaver extends React.Component {
         })
 
         const buttonContainerHeight = Device.height - (Device.height - 150);
-
-        return !this.state.FontsLoaded ? null : (
+        return (
             <View style={{ height: Device.height, width: Device.width, ...styles.wrapper}} onTouchEnd={() => this.goToHomePage()}>
                 <View style={{ height: Device.height - 150, widht: Device.width, ...styles.logoContainer}}>
                     <Animated.Image 
@@ -76,13 +66,13 @@ class ScreenSaver extends React.Component {
                     />
 
                     <View style={styles.textContainer}>
-                        <Text style={{ fontFamily: 'Montserrat-Bold', ...styles.ginoLogoText}}>Gino's</Text>
-                        <Text style={{ fontFamily: 'Montserrat-Light', ...styles.subLogoText}}>restaurant + bar</Text>
+                        <Text style={styles.ginoLogoText}>Gino's</Text>
+                        <Text style={styles.subLogoText}>restaurant + bar</Text>
                     </View>
                 </View>
 
                 <View style={{ height: buttonContainerHeight, width: Device.width, ...styles.startTextContainer }}>
-                        <Text style={{ fontFamily: 'Montserrat-Bold', ...styles.startText}}>Touch to Start</Text>
+                        <Text style={styles.startText}>Touch to Start</Text>
                 </View>
             </View>
         )
