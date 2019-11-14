@@ -7,12 +7,21 @@ const Orders = new mongoose.Schema({
     required: true,
   },
   items: {
-    type: 'Array',
-    require: true,
+    type: Array,
+    required: true,
   },
-  totalCost: {
+  total: {
     type: Number,
     required: true,
+  },
+  status:{
+    type: String,
+    enum: ['new-order', 'pending', 'ready-for-delivery', 'delivered'],
+    default: 'new-order',
+  },
+  paid:{
+    type: Boolean,
+    default: false
   }
 });
 
