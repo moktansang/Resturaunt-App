@@ -207,7 +207,7 @@ class ItemScreen extends React.Component {
                         </Text>
                         { itemAdded ? null : 
                             <Text style={{ fontFamily: 'Montserrat-Regular', fontSize: 20, color: 'white' }}>
-                                ${totalPrice}
+                                ${totalPrice.toFixed(2)}
                             </Text>
                         }
                     </TouchableOpacity>
