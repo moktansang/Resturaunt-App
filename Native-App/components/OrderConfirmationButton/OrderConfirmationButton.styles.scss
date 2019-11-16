@@ -1,0 +1,23 @@
+@import '../../global';
+
+.button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 75;
+    width: 80%;
+    background-color: $bright-green;
+    border-radius: 10px;
+    margin-bottom: 50;
+}
+
+.buttonText {
+    color: white;
+    font-size: 20px;
+}
+
+.checkMark {
+    width: 25;
+    height: 25;
+}
