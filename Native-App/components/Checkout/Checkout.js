@@ -10,7 +10,7 @@ import DeviceSafeMargins from '../../utils/DeviceSafeMargins'
 import Overlay from '../Overlay/Overlay'
 import OrderReviewer from '../OrderReviewer/OrderReviewer'
 
-const receiptImage = require('../../assets/invoice.png');
+const receiptImage = require('../../assets/images/invoice.png');
 
 /**
  * @name Checkout
@@ -78,7 +78,7 @@ class Checkout extends React.Component {
                 <OrderReviewer animated_X_translation={this.animated_X_translation} />
 
                 { open ? 
-                    <Overlay bgColor='black' startCloseAnimation={this.startCloseAnimation} animated_opacity={this.animated_opacity} /> : 
+                    <Overlay bgColor='black' onTouch={this.startCloseAnimation} animated_opacity={this.animated_opacity} /> : 
                     null
                 }
 
