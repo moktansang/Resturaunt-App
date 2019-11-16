@@ -14,19 +14,27 @@ class OrderConfirmationButton extends React.Component {
         this.state = {
             FontsLoaded: false
         }
+
+        this.mounted = false;
     }
 
     async componentDidMount() {
+        this.mounted = true;
         await Font.loadAsync({
             'Montserrat-SemiBold': require('../../assets/fonts/Montserrat/Montserrat-SemiBold.ttf'),
         })
-        this.setState({ FontsLoaded: true });
+
+        this.mounted ? this.setState({ FontsLoaded: true }) : null;
+    }
+
+    componentWillUnmount() {
+        this.mounted = false;
     }
 
     render() {
         return !this.state.FontsLoaded ? null : (
             <TouchableOpacity onPress={() => alert("HI")} style={styles.button}>
-                <Text style={{ fontFamily: 'Montserrat-SemiBold', ...styles.buttonText }}>Confirm Order</Text>
+                <Text style={{ ...styles.buttonText }}>Confirm Order</Text>
                 <Image source={checkMark} style={styles.checkMark} />
             </TouchableOpacity>
         )
